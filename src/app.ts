@@ -22,12 +22,12 @@ const dbConnect = async() =>{
 
 dbConnect();
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-
 app.use(cors({
     origin: "*"
 }));
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 app.get('/hotel/:city', Main);
 app.post('/hotel', Add);
