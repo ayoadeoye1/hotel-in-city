@@ -25,7 +25,9 @@ dbConnect();
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use(cors());
+app.use(cors({
+    origin: "*"
+}));
 
 app.get('/hotel/:city', Main);
 app.post('/hotel', Add);
