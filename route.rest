@@ -1,0 +1,13 @@
+POST http://localhost:8000/hotel
+Content-Type: application/json
+
+{
+    "name": "Peace Bow Hotel",
+    "city": "ife",
+    "price_range": "7000-20000",
+    "address": "Z277, OAU campus",
+    "contact": "2348163479544"
+}
+
+###
+GET http://localhost:8000/hotel/ife
