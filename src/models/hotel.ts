@@ -6,6 +6,7 @@ const hotelSchema = new mongoose.Schema({
     price_range: String,
     address: String,
     contact: String,
+    image_url: String,
 })
 
 export default mongoose.model('Hotel', hotelSchema);

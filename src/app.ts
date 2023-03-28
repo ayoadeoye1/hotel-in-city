@@ -3,8 +3,7 @@ import * as dotenv from 'dotenv';
 import * as cors from 'cors';
 import * as mongoose from 'mongoose';
 
-import { Main, Add } from './controllers/main'
-
+import router from './routes';
 dotenv.config();
 
 const app = express();
@@ -28,8 +27,13 @@ app.use(cors({
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(express.static('build'));
 
-app.get('/hotel/:city', Main);
-app.post('/hotel', Add);
+app.use('/', router);
+
+app.get('/*', (req, res) =>{
+    res.sendFile('index.html', {root: 'build'})
+})
+
 
 export default app;
