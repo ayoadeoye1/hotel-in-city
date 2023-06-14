@@ -12,7 +12,9 @@ const MONGO_URL = process.env.MONGO_URL;
 
 const dbConnect = async() =>{
     try {
-        await mongoose.connect(MONGO_URL);
+        await mongoose.connect(MONGO_URL, {
+          dbName: 'portifolio'
+        });
         console.log('DB connected')
     } catch (error) {
         console.log(error.message);
@@ -27,13 +29,8 @@ app.use(cors({
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(express.static('build'));
 
-app.use('/', router);
-
-app.get('/*', (req, res) =>{
-    res.sendFile('index.html', {root: 'build'})
-})
+app.use('/api', router);
 
 
 export default app;

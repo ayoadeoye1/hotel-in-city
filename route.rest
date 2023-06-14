@@ -1,17 +1,38 @@
-POST http://localhost:8000/hotel
+POST http://localhost:8000/api/ipdata
 Content-Type: application/json
 
 {
-    "name": "Abs monk Hotel",
-    "city": "ife",
-    "price_range": "7000-20000",
-    "address": "Z277, OAU campus",
-    "contact": "2348163479544"
+    "userip": "105.113.17.81"
 }
 
 ###
-GET http://localhost:8000/hotel/ife
+POST http://localhost:8000/api/sign-up
+Content-Type: application/json
 
+{
+    "username": "aady-admin",
+    "email": "admin001@aady.com",
+    "password": "admin001",
+    "cpassword": "admin001"
+}
 
 ###
-GET https://ill-fly-pea-coat.cyclic.app/hotel/ife
+POST http://localhost:8000/api/sign-in
+Content-Type: application/json
+
+{
+    "username": "aady-admin",
+    "password": "admin001"
+}
+
+###
+PATCH  http://localhost:8000/api/aboutmepatch/648706cfb93cba72f3b1bfe2
+Content-Type: application/json
+
+{
+  # "abouttext": "on Above!.",
+  "vid": "ourlbbnnnmnv jhv"
+}
+
+###
+POST  http://localhost:8000/api/blogclap/
